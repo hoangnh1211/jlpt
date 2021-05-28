@@ -1,0 +1,15 @@
+.footer{
+    background-color: #24324a;
+    color: #4e6896;
+    font-size: 1.1rem;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    &__img{
+        margin-bottom: 20px;
+        display: block;
+    }
+    &__icon{
+        margin-right: 10px;
+    }
+}

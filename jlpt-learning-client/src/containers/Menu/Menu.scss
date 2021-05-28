@@ -1,0 +1,49 @@
+$mobile-width: 480px; 
+$tablet-width: 768px; 
+$desktop-width: 1024px;  
+
+@mixin mobile { @media (max-width: #{$mobile-width - 1px}) {     
+  @content;   
+ } 
+}  
+
+.menupage{
+    position: fixed;
+    width: 100vw;
+    font-size: 1.1rem;
+    z-index: 99;
+
+    @include mobile {
+        img {
+            height: 30px;
+        }
+        &__group {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__link{
+        color: rgb(20, 19, 19);
+        padding: 15px;
+        &:hover{
+            text-decoration: none;
+        }
+
+        &__button{
+            background-color: #fb236a !important;
+            border: 1px solid #fb236a;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+
+            &:hover{
+                background-color: #fff !important;
+                color: #fb236a;
+            }
+        }
+    }
+    .active-link {
+        color: rgb(0, 36, 241);
+    }
+}

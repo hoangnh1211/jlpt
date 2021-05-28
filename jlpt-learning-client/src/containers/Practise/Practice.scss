@@ -1,0 +1,51 @@
+.practice {
+    padding-top: 100px;
+    background-color: #F6F9FA;
+    height: 100vh;
+
+    .row {
+        margin-top: 20px;
+    }
+
+    .practice-container {
+        background-color: #fff;
+        padding: 50px 0;
+        border-radius: 10px;
+    }
+
+    .card-practice {
+
+        .btn-practice a{
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+    }
+
+    .practice-category {
+        color: #fff;
+        padding: 5px 20px;
+        width: 150px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .n5-practice {
+        background-color: #3fe1e7;
+    }
+
+    .n4-practice {
+        background-color: #e7c33f;
+    }
+
+    .n3-practice {
+        background-color: #26ae61;
+    }
+
+    .n2-practice {
+        background-color: #0f36a5;
+    }
+
+    .n1-practice {
+        background-color: #ce2f44;
+    }
+}

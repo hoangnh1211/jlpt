@@ -1,0 +1,34 @@
+.register{
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+
+    &__form{
+        min-width: 500px;
+        font-size: 1.2rem;
+
+        button{
+            width: 100%;
+            font-size: 1.2rem;
+        }
+    }
+
+    
+    
+    .alert-success {
+        background-color: rgb(76, 199, 76);
+        color: #fff;
+        padding: 10px 50px;
+        font-size: 1.2rem;
+        position: fixed;
+        top: 100px;
+        right: 0;
+        transition: all 5 ease-in;
+    }
+}
+
+p.alert {
+    color: rgb(253, 31, 79);
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}

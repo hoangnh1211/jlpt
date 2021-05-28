@@ -1,0 +1,63 @@
+.chart{
+    background-color: rgb(238, 243, 232);
+    padding-top: 100px;
+    z-index: -99;
+    &__row{
+        padding-bottom: 30px;
+    }
+}
+
+.chart__n1__title{
+    color: #fff;
+    background-color: rgb(206, 47, 68);
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 10px;
+    h4{
+        padding-top: 10px;
+    }
+}
+
+.chart__n2__title{
+    color: #fff;
+    background-color: rgb(15, 54, 165);
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 10px;
+    h4{
+        padding-top: 10px;
+    }
+}
+
+.chart__n3__title{
+    color: #fff;
+    background-color: rgb(38, 174, 97);
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 10px;
+    h4{
+        padding-top: 10px;
+    }
+}
+
+.chart__n4__title{
+    color: #fff;
+    background-color: rgb(231, 195, 63);
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 10px;
+    h4{
+        padding-top: 10px;
+    }
+}
+
+.chart__n5__title{
+    color: #fff;
+    background-color: rgb(63, 225, 231);
+    margin-bottom: 50px;
+    text-align: center;
+    border-radius: 10px;
+    h4{
+        padding-top: 10px;
+    }
+}

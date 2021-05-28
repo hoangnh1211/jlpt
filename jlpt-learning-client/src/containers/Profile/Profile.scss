@@ -1,0 +1,42 @@
+$mobile-width: 480px; 
+$tablet-width: 768px; 
+$desktop-width: 1024px;  
+
+@mixin mobile { @media (max-width: #{$mobile-width - 1px}) {     
+  @content;   
+ } 
+}  
+
+.profile {
+    height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    padding-top: 100px;
+    // text-align: center;
+    justify-content: center;
+    align-items: flex-start;
+
+    .table {
+        
+        th, td {
+            padding: 10px 10px;
+        }
+
+        @include mobile {
+            .exam-name {
+                display: none;
+            }
+            // td, th {
+            //     padding: 10px 10px;
+            // }
+        }
+    }
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+        align-items: center;
+        justify-content: center;
+    }
+}

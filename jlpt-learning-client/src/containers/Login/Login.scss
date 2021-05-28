@@ -1,0 +1,27 @@
+$mobile-width: 480px; 
+$tablet-width: 768px; 
+$desktop-width: 1024px;  
+
+@mixin mobile { @media (max-width: #{$mobile-width - 1px}) {     
+  @content;   
+ } 
+}  
+
+.login{
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+
+    &__form{
+        width: 500px;
+        font-size: 1.2rem;
+
+        @include mobile {
+            width: 300px !important;
+        }
+
+        button{
+            width: 100%;
+            font-size: 1.2rem;
+        }
+    }
+}
