@@ -8,7 +8,7 @@ router.get('/:level', isLogin, practiceModel.getAllByLevel);
 router.get('/:level/:type', isLogin, practiceModel.getAll);
 router.get('/:level/:type/:id', isLogin, practiceModel.getPracticeById);
 
-
+router.post('/update',isLogin,practiceModel.update)
 router.post('/', isLogin, practiceModel.add);
 router.delete('/', isLogin, practiceModel.remove);
 

@@ -44,6 +44,33 @@ module.exports.getAll = async(req, res) => {
         res.send(result);
     }
 }
+module.exports.update = async(req,res) =>{
+    var body = req.body;
+    let type = body.type
+    let {id, question, answer1, answer2, answer3, answer4, result} = body
+    let qr = `UPDATE questionpractice${type} SET  `
+    if (question){
+        qr=qr + `question='${question}'`
+    }
+    if (answer1){
+        qr=qr + `answer1='${answer1}'`
+    }
+    if (answer2){
+        qr=qr + `answer2='${answer2}'`
+    }
+    if (answer3){
+        qr=qr + `answer3='${answer3}'`
+    }
+    if (answer4){
+        qr=qr + `answer4='${answer4}'`
+    }
+    if (result){
+        qr=qr + `result='${result}'`
+    }
+    qr =qr+ ` WHERE id=${id}`
+    var result1 = queryFunc(qr);
+    res.send({ status: "oke" });
+}
 
 module.exports.add = async(req, res) => {
     var body = req.body;
