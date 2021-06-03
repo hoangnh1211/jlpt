@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import './Profile.scss';
 import { Table } from 'react-bootstrap';
+import axios from 'axios';
 
 class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
             user: JSON.parse(sessionStorage.getItem("user")),
-            data: dataFromBackend
+            data: []
         }
     }
 
     componentDidMount(){
+        axios.get(`http://localhost:8080/point/${this.state.user.id}`)
+        .then(res=>{
+            console.log(res.data);
+            this.setState({data:res.data.data})
+        })
         // call API to get data exam by this.state.user.id => this.setState({data: ...})
     }
 
@@ -25,7 +31,6 @@ class Profile extends Component {
                             <h2>{this.state.user.name}' process: </h2>
                             <Table responsive bordered>
                                 <tr>
-                                    <th className="exam-name">Exam's name</th>
                                     <th>Level</th>
                                     <th>Type</th>
                                     <th>Resuilt</th>
@@ -34,11 +39,10 @@ class Profile extends Component {
                                 {
                                     this.state.data.map(exam => (
                                         <tr>
-                                            <td className="exam-name"> {exam.name} </td>
                                             <td> {exam.level} </td>
-                                            <td> {exam.type} </td>
-                                            <td> {exam.result} </td>
-                                            <td> <a href={`/${exam.name.toLowerCase()}/${exam.level}/${exam.type}/${exam.id}`}>Retest</a> </td>
+                                            <td> vocabulary </td>
+                                            <td> {exam.point} </td>
+                                            <td> <a href={`/Practice/${exam.level}/vocabulary/${exam.id}`}>Retest</a> </td>
                                         </tr>
                                     ))
                                 }

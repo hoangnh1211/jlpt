@@ -4,6 +4,7 @@ import Axios from 'axios';
 import QuestionRadio from '../../../components/QuestionRadio/QuestionRadio';
 import Countdown from '../../../components/Countdown/Countdown';
 import praticApi from '../../../api/practiceApi'
+import axios from 'axios';
 class EntryPractice extends Component {
     constructor(props){
         super(props);
@@ -24,13 +25,11 @@ class EntryPractice extends Component {
     radioOnchange(event){
         var result = {...this.state.result};
         result[event.target.name] = event.target.value;
-        console.log(result);
         this.setState({result: result});
     }
 
     componentDidMount(){
         praticApi.getdata(this.state.path).then((res) => {
-            console.log(res.data);
             this.setState({data: res.data});
         })
     }
@@ -53,6 +52,10 @@ class EntryPractice extends Component {
                 styleLabel.color = "#721c24";
             }
         }
+        let user = JSON.parse(sessionStorage.getItem("user"))
+        let listid=this.state.path.split("/")
+        let practice_id=listid[listid.length-1]
+        axios.post(`http://localhost:8080/point/${user.id}`,{practice_id:practice_id,point:point})
         this.setState({point: point, displayResult: true, displayCorrect: true});
     }
 
@@ -67,7 +70,6 @@ class EntryPractice extends Component {
         arrPath.splice(arrPath.length - 1, 1);
         path = arrPath.join('/');
         let tt=`${this.state.data.length}`
-        console.log(this.state.data);
         return (
             <div className="entry-practice">
                 <div className="container">
